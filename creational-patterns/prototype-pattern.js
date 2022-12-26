@@ -18,24 +18,21 @@ It can be used when creating objects from a database, whose values are copied to
 */
 
 // Example
-let car = {
-  drive() {
-    console.log("driving the car");
-  },
-  brake() {
-    console.log("stopping the car");
-  },
-  numOfWheels: 4,
-};
+// Example
+const Cricketer = function(name) {
+  this.name = name
+  this.runs = 100
+}
 
-const canFly = () => {
-  console.log("no, it can't");
-};
+Cricketer.prototype.onFour = function(target) {
+  target.runs += 4;
+}
 
-const car1 = Object.create(car);
-const car2 = Object.create(car);
-const car3 = Object.create(car, canFly);
-console.log(car.__proto__);
-console.log(car1.__proto__ == car);
-console.log(car2.__proto__);
-console.log(car3.__proto__);
+Cricketer.prototype.onSix = function(target) {
+  target.hp += 6;
+}
+
+const sam = new Cricketer('Sam')
+const brook = new Cricketer('Brook')
+
+console.log(sam.onFour === brook.onSix) // false
