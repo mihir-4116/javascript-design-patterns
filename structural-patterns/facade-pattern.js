@@ -8,9 +8,6 @@ So it can be used when an application has a large and complex underlying code th
 It can also be used when you want to interact with the methods present in a library without knowing the processing that happens in the background. 
 An example can be of the JavaScript libraries such as jQuery.
 
-It can also be used when you want to interact with the methods present in a library without knowing the processing that happens in the background.
-An example can be of the JavaScript libraries such as jQuery.
-
 What problems can the Facade design pattern solve? 
 
 To make a complex subsystem easier to use, a simple interface should be provided for a set of interfaces in the subsystem.
@@ -54,7 +51,7 @@ class FoodOrders {
     return this.conveyOrder(order);
   }
 
-  timetoMakeOrder() {}
+  timeToMakeOrder() {}
   conveyOrder(order) {}
 }
 
@@ -65,12 +62,12 @@ class MainCourseChef extends FoodOrders {
     return this;
   }
 
-  timetoMakeOrder() {
+  timeToMakeOrder() {
     return Math.floor(Math.random() * 50) + 10;
   }
 
   conveyOrder({ orderId, orderDetails }) {
-    const time = this.timetoMakeOrder();
+    const time = this.timeToMakeOrder();
     console.log(
       `Order number ${orderId}: ${orderDetails.foodDetails} will be served in ${time} minutes.`
     );
@@ -84,12 +81,12 @@ class DessertChef extends FoodOrders {
     return this;
   }
 
-  timetoMakeOrder() {
+  timeToMakeOrder() {
     return Math.floor(Math.random() * 30) + 10;
   }
 
   conveyOrder({ orderId, orderDetails }) {
-    const time = this.timetoMakeOrder();
+    const time = this.timeToMakeOrder();
     console.log(
       `Order number ${orderId}: ${orderDetails.foodDetails} will be served in ${time} minutes.`
     );

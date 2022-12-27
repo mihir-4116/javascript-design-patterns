@@ -11,13 +11,11 @@ This makes the process more streamlined.
 // Example - 1
 
 class BasicMaths {
-  constructor() {}
-
   addition(a, b) {
     console.log(a + b);
   }
 
-  substraction(a, b) {
+  subtraction(a, b) {
     console.log(a - b);
   }
 }
@@ -37,7 +35,7 @@ function addMethodsTOObjects(obj) {
 const obj = new BasicMaths();
 const newObjWithExtendedMethods = addMethodsTOObjects(obj);
 console.log(obj.addition(10, 5));
-console.log(obj.substraction(10, 5));
+console.log(obj.subtraction(10, 5));
 console.log(newObjWithExtendedMethods.multiply(10, 5));
 console.log(newObjWithExtendedMethods.division(10, 5));
 
@@ -67,7 +65,7 @@ function SuperHeroWithSuperSpeed(superhero) {
   return superhero;
 }
 
-function SuperHeroWithSpeedandSword(superhero) {
+function SuperHeroWithSpeedAndSword(superhero) {
   superhero.speedAndSword = true;
 
   superhero.hasSpeedAndSword = function () {
@@ -75,3 +73,8 @@ function SuperHeroWithSpeedandSword(superhero) {
   };
   return superhero;
 }
+
+const superHero = new SuperHero();
+const superHeroWithSword = SuperHeroWithSword(superHero);
+const superHeroWithSuperSpeed = SuperHeroWithSuperSpeed(superHero);
+const superHeroWithSpeedAndSword = SuperHeroWithSpeedAndSword(superHero);
