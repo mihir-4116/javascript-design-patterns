@@ -1,5 +1,6 @@
 /*
 The single responsibility principle says that a class or module should have only a single purpose. 
+A class should have only one reason to change
 */
 
 // Example :
@@ -16,7 +17,7 @@ class CalorieTracker {
 
   trackCalories(calorieCount) {
     this.calories += calorieCount;
-    if (this.calories > calorieCount) {
+    if (this.calories > this.maxCalories) {
       this.errorLog("maximum calories exceeded");
     }
   }
@@ -43,12 +44,13 @@ class CalorieTracker {
   constructor(maxCalories) {
     this.calories = 0;
     this.maxCalories = maxCalories;
+    this.errorLog = new ErrorLog();
   }
 
   trackCalories(calorieCount) {
     this.calories += calorieCount;
-    if (this.calories > calorieCount) {
-      ErrorLog.warn("maximum calories exceeded");
+    if (this.calories > this.maxCalories) {
+      this.errorLog.warn("maximum calories exceeded");
     }
   }
 }
