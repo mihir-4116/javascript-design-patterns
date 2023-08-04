@@ -1,5 +1,5 @@
 /*
-The Liskov substitution principle states that any class should be substitutable for its parent class without unexpected consequences. 
+The liskov substitution principle states that any class should be substitutable for its parent class without unexpected consequences. 
 In others words, if the classes Cat and Dog extend the class Animal, 
 then we would expect all of the functionality held within the Animal class to behave normally for a Cat and Dog object.
 */
